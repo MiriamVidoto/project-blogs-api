@@ -1,9 +1,9 @@
 const { userService } = require('../services');
 
-const userControllerInsert = (req, res) => {
+const userControllerInsert = async (req, res) => {
   const userData = req.body;
-  const result = userService.userServiceInsert(userData);
-  res.status(200).json(result);
+  const result = await userService.userServiceInsert(userData);
+  res.status(200).json(result.message);
 };
 module.exports = {
 userControllerInsert,
