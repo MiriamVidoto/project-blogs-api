@@ -35,8 +35,14 @@ const userServiceGetById = async (id) => {
   return { status: 200, message: result };
 };
 
+const userServiceDelete = async (id) => {
+  await User.destroy({ where: { id } });
+  return { status: 204 };
+};
+
 module.exports = {
   userServiceInsert,
   userServiceGetAll,
   userServiceGetById,
+  userServiceDelete,
 };

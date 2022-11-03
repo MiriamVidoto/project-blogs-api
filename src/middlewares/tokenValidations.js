@@ -7,9 +7,9 @@ const tokenValidation = (req, res, next) => {
       message: 'Token not found',
     });
   }
-  const result = validateToken(authorization);
-  console.log(result);
-  if (result.name === 'erro') {
+  const user = validateToken(authorization);
+  req.user = user;
+  if (user.name === 'erro') {
     return res.status(401).json({
       message: 'Expired or invalid token',
     });

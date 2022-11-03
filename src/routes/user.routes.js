@@ -18,4 +18,6 @@ userRoutes.get('/', tokenValidation, userController.userControllerGetAll);
 
 userRoutes.get('/:id', tokenValidation, userController.userControllerGetById);
 
+userRoutes.delete('/me', tokenValidation, userController.userControllerDelete);
+
 module.exports = userRoutes;
