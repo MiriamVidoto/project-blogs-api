@@ -12,4 +12,8 @@ postRoutes.get('/',
   tokenValidation,
   postController.postControllerGetAll);
 
+postRoutes.get('/:id',
+  tokenValidation,
+  postController.postControllerGetById);
+
 module.exports = postRoutes;
