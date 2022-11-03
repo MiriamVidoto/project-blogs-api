@@ -1,8 +1,9 @@
 const { postService } = require('../services');
 
 const postControllerInsert = async (req, res) => {
+  const { id } = req.user;
   const data = req.body;
-  const result = await postService.postServiceInsert(data);
+  const result = await postService.postServiceInsert(id, data);
   res.status(result.status).json(result.message);
 };
 
